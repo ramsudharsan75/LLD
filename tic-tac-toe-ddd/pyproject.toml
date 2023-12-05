@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "tic-tac-toe-ddd"
+version = "0.1.0"
+description = "Tic Tac Toe sample project following DDD"
+authors = ["Ramsudharsan Manoharan"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
