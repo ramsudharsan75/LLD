@@ -1,5 +1,5 @@
-from LLD.split_wise.dao.User import User
-from LLD.split_wise.entity.ExpenseDTO import ExpenseDTO
+from LLD.split_wise.dto.ExpenseDTO import ExpenseDTO
+from LLD.split_wise.model.User import User
 
 
 class AppDTO:

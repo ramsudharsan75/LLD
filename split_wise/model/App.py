@@ -1,11 +1,6 @@
-from LLD.split_wise.dao.User import User
-from LLD.split_wise.entity.AppDTO import AppDTO
-from LLD.split_wise.entity.CommandDTO import (
-    CommandDTO,
-    ExpenseCommandDTO,
-    ShowCommandDTO,
-)
-from LLD.split_wise.entity.ExpenseDTO import ExpenseDTO
+from LLD.split_wise.dto.AppDTO import AppDTO
+from LLD.split_wise.dto.CommandDTO import CommandDTO, ExpenseCommandDTO, ShowCommandDTO
+from LLD.split_wise.dto.ExpenseDTO import ExpenseDTO
 from LLD.split_wise.strategy.SplitStrategy import (
     EqualSplitStrategy,
     ExactSplitStrategy,
@@ -14,10 +9,6 @@ from LLD.split_wise.strategy.SplitStrategy import (
 
 
 class App:
-    @staticmethod
-    def create_app_dto(users: list[User]):
-        return AppDTO(users, False)
-
     def __init__(self, app_dto: AppDTO) -> None:
         self.app_dto = app_dto
 

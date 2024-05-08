@@ -1,13 +1,9 @@
 from typing import Self
 
-from LLD.split_wise.entity.UserDTO import UserDTO
+from LLD.split_wise.dto.UserDTO import UserDTO
 
 
 class User:
-    @staticmethod
-    def create_user_dto(name: str) -> UserDTO:
-        return UserDTO(name)
-
     def __init__(self, user_dto: UserDTO) -> None:
         self.user_dto = user_dto
 

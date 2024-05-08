@@ -1,16 +1,13 @@
-from LLD.split_wise.entity.CommandDTO import (
-    ExpenseCommandDTO,
-    ShowCommandDTO,
-)
+from LLD.split_wise.dto.CommandDTO import ExpenseCommandDTO, ShowCommandDTO
 
 
-class Command:
+class CommandFactory:
     @staticmethod
     def create_command_dto(inputs: list[str]):
         if inputs[0] == "EXPENSE":
-            return Command._create_expense_command_dto(inputs=inputs[1:])
+            return CommandFactory._create_expense_command_dto(inputs=inputs[1:])
         else:
-            return Command._create_show_command(inputs=inputs[1:])
+            return CommandFactory._create_show_command(inputs=inputs[1:])
 
     @staticmethod
     def _create_expense_command_dto(inputs: list[str]) -> ExpenseCommandDTO:
@@ -21,7 +18,7 @@ class Command:
             no_of_users=no_of_users,
             paid_for_user_names=inputs[3 : 3 + no_of_users],
             split_strategy_name=inputs[3 + no_of_users],
-            split_values=[int(val) for val in inputs[no_of_users + 4:]],
+            split_values=[int(val) for val in inputs[no_of_users + 4 :]],
         )
 
     @staticmethod

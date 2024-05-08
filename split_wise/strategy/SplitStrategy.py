@@ -1,30 +1,30 @@
 import math
 from abc import ABC, abstractmethod
 
-from LLD.split_wise.dao.User import User
+from LLD.split_wise.model.User import User
 
 
 class SplitStrategy(ABC):
+    @staticmethod
     @abstractmethod
     def split_expense(
-        self,
         amount: int,
         no_of_users: int,
         paid_by: User,
         paid_for: list[User],
-        split_values: list[int] = [],
+        split_values: list[int],
     ):
         pass
 
 
 class EqualSplitStrategy(SplitStrategy):
+    @staticmethod
     def split_expense(
-        self,
         amount: int,
         no_of_users: int,
         paid_by: User,
         paid_for: list[User],
-        split_values: list[int] = [],
+        split_values: list[int],
     ):
         first_user_split_amount = math.ceil(amount * 100 / no_of_users) / 100
         other_user_split_amount = math.floor(amount * 100 / no_of_users) / 100
@@ -40,13 +40,13 @@ class EqualSplitStrategy(SplitStrategy):
 
 
 class ExactSplitStrategy(SplitStrategy):
+    @staticmethod
     def split_expense(
-        self,
         amount: int,
         no_of_users: int,
         paid_by: User,
         paid_for: list[User],
-        split_values: list[int] = [],
+        split_values: list[int],
     ):
         for i, ower in enumerate(paid_for):
             if ower == paid_by:
@@ -56,13 +56,13 @@ class ExactSplitStrategy(SplitStrategy):
 
 
 class PercentSplitStrategy(SplitStrategy):
+    @staticmethod
     def split_expense(
-        self,
         amount: int,
         no_of_users: int,
         paid_by: User,
         paid_for: list[User],
-        split_values: list[int] = [],
+        split_values: list[int],
     ):
         for i, ower in enumerate(paid_for):
             if ower == paid_by:
