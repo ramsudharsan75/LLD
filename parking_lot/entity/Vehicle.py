@@ -6,4 +6,3 @@ class Vehicle:
         self.reg_no = reg_no
         self.vehicle_type = vehicle_type
         self.color = color
-        

@@ -35,7 +35,9 @@ class Board:
     def update_player_position(self, player: Player, face: int):
         prev_position = player.position
         player.position = self._get_new_position(prev_position + face)
-        print(f"{player} rolled a {face} and moved from {prev_position} to {player.position}")
+        print(
+            f"{player} rolled a {face} and moved from {prev_position} to {player.position}"
+        )
 
     def _get_new_position(self, position) -> int:
         for ladder in self.ladders:

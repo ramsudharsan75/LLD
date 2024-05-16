@@ -55,18 +55,22 @@ class PieceFactory:
             )
             for _ in range(2)
         ]
-        queen = [Piece(
-            piece_name=prefix + "Q",
-            piece_colour=piece_colour,
-            piece_type=PieceTypeEnum.QUEEN,
-            move_strategy=QueenMoveStrategy,
-        )]
-        king = [Piece(
-            piece_name=prefix + "K",
-            piece_colour=piece_colour,
-            piece_type=PieceTypeEnum.KING,
-            move_strategy=KingMoveStrategy,
-        )]
+        queen = [
+            Piece(
+                piece_name=prefix + "Q",
+                piece_colour=piece_colour,
+                piece_type=PieceTypeEnum.QUEEN,
+                move_strategy=QueenMoveStrategy,
+            )
+        ]
+        king = [
+            Piece(
+                piece_name=prefix + "K",
+                piece_colour=piece_colour,
+                piece_type=PieceTypeEnum.KING,
+                move_strategy=KingMoveStrategy,
+            )
+        ]
 
         return {
             PieceTypeEnum.PAWN: pawns,
@@ -74,5 +78,5 @@ class PieceFactory:
             PieceTypeEnum.KNIGHT: knights,
             PieceTypeEnum.BISHOP: bishops,
             PieceTypeEnum.QUEEN: queen,
-            PieceTypeEnum.KING: king
+            PieceTypeEnum.KING: king,
         }

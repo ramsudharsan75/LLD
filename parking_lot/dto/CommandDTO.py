@@ -4,11 +4,13 @@ from dataclasses import dataclass
 class CommandDTO:
     ...
 
+
 @dataclass
 class CreateParkingLotCommandDTO(CommandDTO):
     parking_lot_name: str
     no_of_floors: int
     no_of_slots_per_floor: int
+
 
 @dataclass
 class ParkVehicleCommandDTO(CommandDTO):

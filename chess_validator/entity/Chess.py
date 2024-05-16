@@ -11,4 +11,3 @@ class Chess:
         colours = [PieceColourEnum.WHITE, PieceColourEnum.BLACK]
         self.players = deque(Player(colour) for colour in colours)
         self.board = Board(colours)
-        

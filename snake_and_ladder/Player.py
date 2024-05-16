@@ -12,7 +12,7 @@ class Player:
     def roll_die(self, die: Die) -> int:
         face = random.randint(1, die.faces)
         return face
-        
+
     def __hash__(self) -> int:
         return hash(self.name)
 

@@ -1,5 +1,3 @@
-
-
 from collections import defaultdict
 from LLD.parking_lot.entity.Slot import Slot
 from LLD.parking_lot.util.enum import VehicleTypeEnum
@@ -19,7 +17,6 @@ class Floor:
             return value.floor_no == self.floor_no
 
         return False
-    
 
     def book_slot(self, slot: Slot):
         available_vehicle_type_slots = self.available_slots[slot.vehicle_type]
@@ -32,7 +29,9 @@ class Floor:
         self.available_slots[slot.vehicle_type][slot.slot_no] = slot
 
     @staticmethod
-    def initialize_floors(floors: list['Floor'], no_of_floors: int, no_of_slots_per_floor: int):
+    def initialize_floors(
+        floors: list["Floor"], no_of_floors: int, no_of_slots_per_floor: int
+    ):
         for floor_no in range(no_of_floors):
             floor = Floor(floor_no)
             floors.append(floor)

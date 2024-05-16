@@ -9,18 +9,17 @@ class Slot:
     def __hash__(self) -> int:
         return self.slot_no
 
-
     def __eq__(self, value: object) -> bool:
         if isinstance(value, Slot):
             return self.slot_no == value.slot_no
 
         return False
 
-    
     @staticmethod
-    def initialize_slots(slots: dict[VehicleTypeEnum, dict[int, 'Slot']], no_of_slots: int):
+    def initialize_slots(
+        slots: dict[VehicleTypeEnum, dict[int, "Slot"]], no_of_slots: int
+    ):
         for slot_no in range(no_of_slots):
-
             if slot_no == 0:
                 vehicle_type = VehicleTypeEnum.TRUCK
             elif slot_no <= 2:

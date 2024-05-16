@@ -13,4 +13,3 @@ class PlayTicTacToeUseCase:
             print(f"Player {self.game.winner.symbol.value} won!")
         else:
             print("It's a tie!")
-
